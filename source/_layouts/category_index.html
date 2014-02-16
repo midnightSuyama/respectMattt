@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{% assign category = page.category %}
+{% include post/theme.html %}
+<div role="main" class="category-index {{ theme }}">
+  <header class="page-header">
+    <h1>{{ page.category }}</h1>
+  </header>
+  <ul>
+    {% for post in site.categories[page.category] %}
+      <li>
+        <div class="article-title"><a href="{{ root_url }}{{ post.url }}" class="lettering">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></div>
+        <div>{% include post/date.html %}{{ time }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

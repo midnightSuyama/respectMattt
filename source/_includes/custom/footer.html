@@ -1,0 +1,6 @@
+<div class="footer-icons">
+  {% if site.twitter_user %}<a href="https://twitter.com/{{ site.twitter_user }}" target="_blank" class="icon-twitter icon-2x"></a>{% endif %}
+  {% if site.github_user %}<a href="https://github.com/{{ site.github_user }}" target="_blank" class="icon-github icon-2x"></a>{% endif %}
+  {% if site.subscribe_rss %}<a href="{{ site.subscribe_rss }}" target="_blank" class="icon-rss icon-2x"></a>{% endif %}
+</div>
+<p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}, Powered by <a href="http://octopress.org" target="_blank">Octopress</a> &amp; <a href="https://github.com/midnightSuyama/respectMattt" target="_blank">respectMattt</a></p>

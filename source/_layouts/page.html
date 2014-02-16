@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article role="main" class="article">
+  <header class="page-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+  {% unless page.sharing == false %}
+    {% include post/sharing.html %}
+  {% endunless %}
+  <div>{{ post.content }}</div>
+</article>
+
+{% if site.disqus_short_name and page.comments == true %}
+<section class="disqus">
+  <div id="disqus_thread" aria-live="polite"></div>
+</section>
+{% endif %}

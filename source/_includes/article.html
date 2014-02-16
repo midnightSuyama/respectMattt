@@ -1,0 +1,20 @@
+<header class="article-header">
+  {% if index %}
+    <h1 class="article-title"><a href="{{ root_url }}{{ post.url }}" class="lettering">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+  {% else %}
+    <h1 class="article-title lettering">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+  {% endif %}
+  <div>
+    <span><i class="icon-tag"></i> {% include post/categories.html %}</span>
+    <span class="pull-right">{% include post/date.html %}{{ time }}</span>
+  </div>
+</header>
+
+{% if index %}
+  <div>{{ content | excerpt }}</div>
+{% else %}
+  {% unless page.sharing == false %}
+    {% include post/sharing.html %}
+  {% endunless %}
+  <div>{{ content }}</div>
+{% endif %}
