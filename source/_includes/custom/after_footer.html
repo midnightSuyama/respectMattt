@@ -1,10 +1,8 @@
 <script language="JavaScript">
-$('.article-index').isotope({
-  articleSelector: '.article',
-  masonry: {
-    columnWidth: 310
-  }
-});
-
-$('.lettering').lettering();
+  $(function(){
+    $('.article-index').isotope({
+      itemSelector: ".article"
+    });
+    $('.lettering').lettering();
+  });
 </script>

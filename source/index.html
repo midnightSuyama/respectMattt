@@ -3,19 +3,19 @@ layout: default
 ---
 
 {% assign index = true %}
-<div role="main" class="article-index">
+<div role="main" class="row article-index">
   {% for post in paginator.posts %}
     {% assign content = post.content %}
     {% assign category = post.categories.first %}
     {% include post/theme.html %}
-    <article class="article {{ theme }}">{% include article.html %}</article>
+    <article class="col-md-4 col-sm-6 col-xs-12 article {{ theme }}">{% include article.html %}</article>
   {% endfor %}
 </div>
 <ul class="article-pagination">
   {% if paginator.previous_page %}
-    <li class="previous"><a class="previous" href="{{paginator.previous_page}}"><i class="icon-caret-left"></i> Prev</a></li>
+    <li class="previous"><a class="previous" href="{{paginator.previous_page_path}}"><i class="icon-caret-left"></i> Prev</a></li>
   {% endif %}
   {% if paginator.next_page %}
-    <li class="next"><a class="next" href="{{paginator.next_page}}">Next <i class="icon-caret-right"></i></a></li>
+    <li class="next"><a class="next" href="{{paginator.next_page_path}}">Next <i class="icon-caret-right"></i></a></li>
   {% endif %}
 </ul>

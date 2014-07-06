@@ -5,7 +5,7 @@
     <h1 class="article-title lettering">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
   {% endif %}
   <div>
-    <span><i class="icon-tag"></i> {% include post/categories.html %}</span>
+    <span><i class="fa fa-tag"></i> {% include post/categories.html %}</span>
     <span class="pull-right">{% include post/date.html %}{{ time }}</span>
   </div>
 </header>
